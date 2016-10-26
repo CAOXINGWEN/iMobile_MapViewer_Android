@@ -40,8 +40,15 @@ public class DefaultDataManager extends DataManager{
 			return R.drawable.ic_map_cad;
 		}else if(name.contains("iServerRestµØÍ¼")){
 			return R.drawable.ic_map_rest;
+		}else if(name.contains("WMSµØÍ¼")){
+			return R.drawable.ic_map_wms;
+		}else if(name.contains("BingµØÍ¼")){
+			return R.drawable.ic_map_bing;
+		}else if(name.contains("OpenStreetMap")){
+			return R.drawable.ic_map_osm;
 		}
 		return R.drawable.ic_map_vector;
+	
 	}
 	
 	

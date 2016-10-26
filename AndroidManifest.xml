@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.supermap.imb.base"
     android:versionCode="1"
-    android:versionName="1.1" >
+    android:versionName="1.2" >
 
     <uses-sdk 
         android:minSdkVersion="10"
-        android:targetSdkVersion="19"/>
+        android:targetSdkVersion="17"/>
     <!-- Add SuperMap iMobile basic permission to AndroidMainifest.xml -->
       <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 	  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
@@ -20,6 +20,7 @@
     <application
         android:name="com.supermap.imb.appconfig.MyApplication"
         android:allowBackup="true"
+        android:largeHeap="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar" >

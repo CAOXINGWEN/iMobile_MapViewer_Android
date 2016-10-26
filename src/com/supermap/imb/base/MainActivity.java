@@ -125,7 +125,7 @@ public class MainActivity extends Activity implements OnClickListener{
 				runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
-						progress.dismiss();
+						
 						if(mDefaultDataManager.isDataOpen()){
 							mMapControl.getMap().setWorkspace(mDefaultDataManager.getWorkspace());
 							// 对长春市地图增加整屏刷新
@@ -134,6 +134,10 @@ public class MainActivity extends Activity implements OnClickListener{
 							}else{
 								mMapControl.getMap().setFullScreenDrawModel(false);
 							}
+							//判断mapname是否为空
+							if(mDefaultDataManager.getDisplayMapName()== null){
+								return;
+							}
 							mMapControl.getMap().open(mDefaultDataManager.getDisplayMapName());
 						}else {
 							MyApplication.getInstance().ShowError("工作空间打开失败！");
@@ -141,6 +145,7 @@ public class MainActivity extends Activity implements OnClickListener{
 						mMyMapPopup          = new MyMapPopup(mMapControl);
 						mUserDatasourcePopup = new UserDatasourcePopup(mMapControl);
 						mUserWorkspacePopup  = new UserWorkspacePopup(mMapControl);
+						progress.dismiss();
 					}
 				});
 			}

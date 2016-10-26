@@ -36,8 +36,8 @@ public class MyApplication extends Application {
 		mDefaultDataManager = new DefaultDataManager();
 		mUserDataManager = new DataManager();
 		
-//    	//配置数据
-//		new DefaultDataConfig().autoConfig();
+		//配置数据
+		new DefaultDataConfig().autoConfig();
 		
 	}
 	

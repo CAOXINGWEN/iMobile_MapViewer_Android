@@ -68,8 +68,6 @@ public class MyMapPopup extends PopupWindow implements OnClickListener{
 		initMapList();
 		mListMaps.setAdapter(new MapsAdapter());
 	}
-	
-	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -108,7 +106,7 @@ public class MyMapPopup extends PopupWindow implements OnClickListener{
 		public View getView(int index, View convertView, ViewGroup arg2) {
 			ViewHolder holder = null;
 			if(convertView == null){
-				convertView = mInflater.inflate(R.layout.listview_map_item,	 null);
+				convertView = mInflater.inflate(R.layout.listview_map_item,	 null);			
 				holder = new ViewHolder();
 				holder.MapName = (TextView) convertView.findViewById(R.id.tv_map_name);
 				holder.MapType = (ImageView) convertView.findViewById(R.id.img_map_type);
@@ -142,10 +140,11 @@ public class MyMapPopup extends PopupWindow implements OnClickListener{
 							mMapControl.getMap().setFullScreenDrawModel(false);
 						}
 						mMapControl.getMap().refresh();
-	
-						mListMaps.getChildAt(indexOfMapList).setEnabled(true);
-						arg0.setEnabled(false);                           // 固定当前条目的背景色
-						indexOfMapList = mListMaps.indexOfChild(arg0);
+						
+//						mListMaps.getChildAt(indexOfMapList).setEnabled(true);
+//						arg0.setEnabled(false);                           // 固定当前条目的背景色
+//						indexOfMapList = mListMaps.indexOfChild(arg0);
+						
 					}
 				}
 			});
@@ -168,6 +167,9 @@ public class MyMapPopup extends PopupWindow implements OnClickListener{
 		mapList.add("DEM地图");
 		mapList.add("SCI地图");
 		mapList.add("CAD地图");
+		mapList.add("WMS地图");
+		mapList.add("Bing地图");
+		mapList.add("OpenStreetMap");
 		
 	}
 	
